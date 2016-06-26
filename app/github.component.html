@@ -1,0 +1,19 @@
+<div *ngIf="isLoading" class="well text-center text-muted">
+    Getting data...
+</div>
+<div *ngIf="!isLoading" class="container well">
+    <h2>@{{ user.login }}</h2>
+    <img class="avatar" src="{{ user.avatar_url }}"/>
+
+    <h3>Followers</h3>
+    <div *ngFor="#follower of followers" class="media">
+        <div class="media-left">
+        <img class="avatar media-object" src="{{ follower.avatar_url }}"/>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">
+                {{ follower.login }}
+            </h4>
+        </div>
+    </div>
+</div>
